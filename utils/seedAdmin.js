@@ -1,4 +1,3 @@
-
 const User = require("../models/User");
 
 const seedAdmin = async () => {
@@ -7,7 +6,9 @@ const seedAdmin = async () => {
 
   if (!user) {
     await User.create({
-      nom: "yahya",
+      nom: "eloukili",
+      prenom: "yahya",
+
       email: "yahya.ensas@hotmail.com",
       matricule: "admin1234",
       password: 'admin1234',

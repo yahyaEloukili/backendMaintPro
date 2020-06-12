@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 const conn = require('../config/db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const sequelize = require('sequelize');
 const User = conn.define('user', {
   id: {
     primaryKey: true,
@@ -9,6 +10,11 @@ const User = conn.define('user', {
     defaultValue: Sequelize.UUIDV4
   },
   nom: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    trim: true
+  },
+  prenom: {
     type: Sequelize.STRING,
     allowNull: false,
     trim: true
@@ -43,6 +49,15 @@ const User = conn.define('user', {
     type: Sequelize.ENUM,
     values: ['user', 'admin'],
     allowNull: false
+  },
+  from: {
+    type: Sequelize.DATE
+  },
+  to: {
+    type: Sequelize.DATE
+  },
+  expire: {
+    type: Sequelize.INTEGER
   }
 });
 
