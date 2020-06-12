@@ -1,0 +1,17 @@
+{
+  "developement": {
+    "username": "root",
+    "password": "root",
+    "database": "maintpro",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "description": "this is in memory databases to quickly test Queries against the database",
+    "storage": ":memory:",
+    "dialect": "sqlite"
+  },
+  "production": {
+  }
+}

@@ -1,0 +1,6 @@
+const REST_API_KEY = 'ZWFkOWFjOGYtY2NlOS00MGUzLTg0YWQtMTg3NTJkM2NkZGYy';
+const ONE_SIGN9AL_ID = '743e1416-c5c9-4e22-949b-8a071128d813';
+module.exports = Object.freeze({
+    ONE_SIGN9AL_ID,
+    REST_API_KEY
+});
