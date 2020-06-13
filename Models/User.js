@@ -67,9 +67,13 @@ User.beforeCreate(async user => {
   user.password = await bcrypt.hash(user.password, salt);
 });
 //   json web token
-User.prototype.getSignedJwtToken = function () {
-  return jwt.sign({ id: this.id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRE
+User.prototype.getSignedJwtToken = function (user) {
+  let exp;
+  if (user.to && user.from) {
+    exp = Math.floor((new Date(user.to)).getTime() / 1000) - Math.floor(Date.now() / 1000);
+  }
+  return jwt.sign({ id: this.id }, (process.env.JWT_SECRET), {
+    expiresIn: exp || process.env.JWT_EXPIRE
   });
 };
 // Match user entered password to hashed password in database

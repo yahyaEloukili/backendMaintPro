@@ -42,17 +42,24 @@ module.exports.login = asyncHandler(async (req, res, next) => {
   if (!isMatch) {
     return next(new ErrorResponse('Invalid credentials', 401));
   }
+  if ((user.to && user.from) && new Date(user.to).getTime() - new Date().getTime() <=0) {
+    return next(new ErrorResponse('votre session a été terminé vous devez demander l\'accés d\'aupré un admin', 404));
+  }
   sendTokenResponse(user, 200, res);
 });
 
 // Get token from model, create cookie and send responce
 const sendTokenResponse = (user, statusCode, res) => {
   // Create token
-  const token = user.getSignedJwtToken();
-  const expire = process.env.JWT_COOKIE_EXPIRE || 2;
+  const token = user.getSignedJwtToken(user);
+  let expire = process.env.JWT_COOKIE_EXPIRE || 2;
+  expire = expire * 24 * 60 * 60 * 1000;
+  if (user.to && user.from) {
+    expire = Math.floor((new Date(user.to)).getTime() / 1000) - Math.floor(Date.now() / 1000);
+  }
   const options = {
     expires: new Date(
-      Date.now() + expire * 24 * 60 * 60 * 1000
+      Date.now() + expire
     ),
     httpOnly: true
   };
@@ -62,7 +69,7 @@ const sendTokenResponse = (user, statusCode, res) => {
   res
     .status(statusCode)
     .cookie('token', token, options)
-    .json({ success: true, user, token, ExpiresIn: Date.now() + expire * 24 * 60 * 60 * 1000 });
+    .json({ success: true, user, token, ExpiresIn: user.to?Math.floor((new Date(user.to)).getTime()):Date.now() + expire});
 };
 
 
