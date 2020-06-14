@@ -1,7 +1,7 @@
 {
   "developement": {
     "username": "root",
-    "password": "root",
+    "password": "roote",
     "database": "maintpro",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -13,5 +13,11 @@
     "dialect": "sqlite"
   },
   "production": {
+    "username": "stockmanager",
+    "password": "Gseqprk64YJfm1Vm",
+    "database": "stock",
+    "host": "91.121.157.36",
+    "dialect": "mysql",
+    "operatorsAliases": false
   }
 }

@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const envDb = process.env.NODE_ENV || 'developement';
-const config = require(__dirname + '/configDb.json')[envDb];
+const config = require(__dirname + '/configDb.json')[envDb.trim()];
 const Op = Sequelize.Op;
 const operatorsAliases = {
   $eq: Op.eq,
@@ -30,7 +30,9 @@ const db = new Sequelize(
       acquire: 30000,
       idle: 10000
     },
-    operatorsAliases
+    operatorsAliases,
+    charset: 'utf8',
+    collate: 'utf8_general_ci',
   },
 );
 
