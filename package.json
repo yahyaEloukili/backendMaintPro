@@ -1,9 +1,6 @@
 {
   "name": "maintproapi",
   "version": "1.0.0",
-  "engines": {
-    "node": "12.14.1"
-  },
   "description": "backend API de Maint Pro",
   "main": "app.js",
   "scripts": {
