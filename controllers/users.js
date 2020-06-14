@@ -1,6 +1,6 @@
 const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middlewares/asyncHandler');
-const User = require('../models/User');
+const User = require('../Models/User');
 // const Zone = require('../models/Zone');
 const nodemailer = require("nodemailer");
 const bcrypt = require('bcryptjs');
