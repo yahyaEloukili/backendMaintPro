@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../Models/User");
 
 const seedAdmin = async () => {
   const user = await User.find({ where: { email: "yahya.ensas@hotmail.com" } });
