@@ -2,6 +2,7 @@ const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middlewares/asyncHandler");
 const Questions = require('../Models/Question');
 const Answers = require('../Models/Answer');
+const Edition = require('../Models/Edition');
 const HttpStatus = require('http-status-codes');
 const conn = require('../config/db');
 const {codeBarFactory} = require('../utils/helpers');
@@ -13,7 +14,7 @@ module.exports.getQuestionById = asyncHandler(async (req, res, next) => {
   const {id} = req.params;
   const qst = await Questions.findByPk(id,{
     include: [
-      Answers
+      Answers,
     ],
     order: [
       [ Answers, 'correct', 'DESC' ],
@@ -32,8 +33,16 @@ module.exports.addQuestion = asyncHandler(async (req, res, next) => {
     results = await conn.transaction(async t => {
       try {
         qst = await Questions.create(req.body, {
-          include: Answers
+          include: Answers,
+          transaction: t
         });
+        if ('editions' in req.body) {
+          let editions = req.body.editions;
+          let arrayPromise = [];
+          // console.log(Questions);
+          arrayPromise = editions.map(el => qst.addEditions(el),{transaction: t });
+          await Promise.all(arrayPromise);
+        }
         const name = new Date().valueOf() + '_' + qst.dataValues.code;
         codeBarFactory(qst.dataValues.code,name);
         qst.image = [name + '.png'];
@@ -74,6 +83,13 @@ module.exports.updateQuestion = asyncHandler(async (req, res, next) => {
     where: { id: id }
   });
   const qst = await Questions.findByPk(id);
+  if ('editions' in req.body) {
+    let editions = req.body.editions;
+    let arrayPromise = [];
+    // arrayPromise = editions.map(el => qst.setEditions(el));
+    await qst.setEditions(editions);
+    // await Promise.all(arrayPromise);
+  }
   res.status(HttpStatus.OK).json({ success: true, data: qst });
 });
 

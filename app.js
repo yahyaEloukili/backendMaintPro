@@ -20,6 +20,7 @@ const Theme = require('./routes/themes');
 const errorHandler = require("./middlewares/error");
 const Metier = require('./routes/metiers');
 const User = require('./routes/users');
+const Edition = require('./routes/editions');
 const auth = require("./routes/auth");
 const seed = require('./test/seed');
 const seedAdmin = require("./utils/seedAdmin");
@@ -30,7 +31,7 @@ conn
 
 // add {force: true} to sync properties first time
 
-conn.sync({ force: true}).then(async () => {
+conn.sync({ force: false}).then(async () => {
   // seed admin and his zone
   await seedAdmin();
 });
@@ -50,6 +51,7 @@ app.use("/api/v1/studycases", StudyCase);
 app.use("/api/v1/themes", Theme);
 app.use("/api/v1/metiers", Metier);
 app.use("/api/v1/users", User);
+app.use("/api/v1/editions",Edition);
 app.use("/api/v1/auth", auth);
 app.use(errorHandler);
 
