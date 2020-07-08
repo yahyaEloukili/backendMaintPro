@@ -15,6 +15,7 @@ module.exports.getQuestionById = asyncHandler(async (req, res, next) => {
   const qst = await Questions.findByPk(id,{
     include: [
       Answers,
+      Edition
     ],
     order: [
       [ Answers, 'correct', 'DESC' ],

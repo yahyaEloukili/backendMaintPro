@@ -25,10 +25,11 @@ const associations = () => {
   });
 
   StudyCase.hasMany(Question, {
-    foreignKey: { allowNull: true }
+    // foreignKey: { allowNull: true }
+    onDelete: 'cascade', hooks: true
   });
   Question.belongsTo(StudyCase, {
-    foreignKey: { allowNull: true }
+    foreignKey: { allowNull: true },
   });
 
   Metier.hasMany(StudyCase, {
