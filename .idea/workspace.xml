@@ -4,9 +4,17 @@
     <list default="true" id="d766a941-4db6-42d3-9584-efebaf7ec35d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/Config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/Config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/components/add-question/add-question.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/components/add-question/add-question.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/components/add-question/checkcorrect/checkcorrect.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/components/add-question/checkcorrect/checkcorrect.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/components/add-question/checkcorrect/checkcorrect.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/components/add-question/checkcorrect/checkcorrect.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/components/add-question/checkcorrect/checkcorrect.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/components/add-question/checkcorrect/checkcorrect.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/components/edit-case/edit-case.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/components/edit-case/edit-case.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/components/edit-case/edit-case.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/components/edit-case/edit-case.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/components/edit-question/edit-question.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/components/edit-question/edit-question.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/components/edit-question/edit-question.components.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/components/edit-question/edit-question.components.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/app/prod/prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/prod/prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../src/styles.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,15 +55,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/Themes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1045">
-              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/associations.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
@@ -73,40 +72,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
+            <state relative-caret-position="536">
               <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/studyCases.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="46" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/uploads/1591832320518_4.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/uploads/1590111134047_00000018.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/uploads/test.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/Edition.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="6" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/uploads/undefined.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -253,6 +245,11 @@
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -321,16 +318,15 @@
       <workItem from="1594144532626" duration="3923000" />
       <workItem from="1594156981173" duration="3072000" />
       <workItem from="1594209261687" duration="299000" />
-      <workItem from="1594209999188" duration="1655000" />
+      <workItem from="1594209999188" duration="4410000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85562000" />
+    <option name="totallyTimeSpent" value="88317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -369,23 +365,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/themes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/questions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uploads/test.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/maintpro.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -399,9 +378,6 @@
     <entry file="file://$PROJECT_DIR$/uploads/1590111910352_00000013.png" />
     <entry file="file://$PROJECT_DIR$/uploads/1590111931699_00000014.png" />
     <entry file="file://$PROJECT_DIR$/uploads/1590111944232_00000011.png" />
-    <entry file="file://$PROJECT_DIR$/uploads/1590111134047_00000018.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/uploads/1590111337570_00000019.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -661,10 +637,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
+        <state relative-caret-position="536">
           <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uploads/1591832320518_4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uploads/test.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uploads/undefined.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uploads/1590111134047_00000018.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>
