@@ -7,6 +7,7 @@ const HttpStatus = require('http-status-codes');
 const conn = require('../config/db');
 const {codeBarFactory} = require('../utils/helpers');
 module.exports.getQuestions = asyncHandler(async (req, res, next) => {
+  console.log(res.advancedResults);
   res.status(HttpStatus.OK).json(res.advancedResults);
 });
 

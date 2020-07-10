@@ -31,7 +31,7 @@ conn
 
 // add {force: true} to sync properties first time
 
-conn.sync({ force: true}).then(async () => {
+conn.sync({ alter: false}).then(async () => {
   // seed admin and his zone
   await seedAdmin();
 });

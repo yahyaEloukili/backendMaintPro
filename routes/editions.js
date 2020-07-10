@@ -8,7 +8,8 @@ const {
   destroyEdition,
   getEditionByid,
   getEditions,
-  updateEdition
+  updateEdition,
+  reporteExcel
 } = require('../controllers/editions');
 const { protect, authorize } = require("../middlewares/auth");
 
@@ -30,7 +31,9 @@ router
 router
   .route('/bulk/operation')
   .post(addbulkEditions);
-
+router
+  .route('/report/excel/:editionsId')
+  .get(reporteExcel);
 
 
 

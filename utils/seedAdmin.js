@@ -8,7 +8,6 @@ const seedAdmin = async () => {
     await User.create({
       nom: "eloukili",
       prenom: "yahya",
-
       email: "yahya.ensas@hotmail.com",
       matricule: "admin1234",
       password: 'admin1234',

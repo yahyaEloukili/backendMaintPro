@@ -2,7 +2,7 @@ const User = require('../Models/User');
 const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middlewares/asyncHandler');
 const bcrypt = require('bcryptjs');
-
+const HttpStatus = require('http-status-codes');
 // creating admin
 
 //@desc Register user
@@ -43,7 +43,10 @@ module.exports.login = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse('Invalid credentials', 401));
   }
   if ((user.to && user.from) && new Date(user.to).getTime() - new Date().getTime() <=0) {
-    return next(new ErrorResponse('votre session a été terminé vous devez demander l\'accés d\'aupré un admin', 404));
+    if(new Date(user.from).getTime() - new Date().getTime() > 0) {
+      return next(new ErrorResponse('votre session n\'a pas encore commencé ', HttpStatus.FORBIDDEN));
+    }
+    return next(new ErrorResponse('votre session a été terminé vous devez demander l\'accés d\'aupré un admin', HttpStatus.FORBIDDEN));
   }
   sendTokenResponse(user, 200, res);
 });
