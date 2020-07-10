@@ -42,10 +42,10 @@ module.exports.login = asyncHandler(async (req, res, next) => {
   if (!isMatch) {
     return next(new ErrorResponse('Invalid credentials', 401));
   }
+  if(new Date(user.from).getTime() - new Date().getTime() > 0) {
+    return next(new ErrorResponse('votre session n\'a pas encore commencé ', HttpStatus.FORBIDDEN));
+  }
   if ((user.to && user.from) && new Date(user.to).getTime() - new Date().getTime() <=0) {
-    if(new Date(user.from).getTime() - new Date().getTime() > 0) {
-      return next(new ErrorResponse('votre session n\'a pas encore commencé ', HttpStatus.FORBIDDEN));
-    }
     return next(new ErrorResponse('votre session a été terminé vous devez demander l\'accés d\'aupré un admin', HttpStatus.FORBIDDEN));
   }
   sendTokenResponse(user, 200, res);
