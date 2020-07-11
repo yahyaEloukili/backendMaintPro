@@ -12,7 +12,7 @@ const HttpStatus = require('http-status-codes');
 const conn = require('../config/db');
 const exec = require('child_process').exec;
 const path = require("path");
-
+const fs = require("fs");
 
 
 
@@ -76,7 +76,7 @@ module.exports.destroyEdition = asyncHandler(async (req, res, next) => {
 });
 
 
-module.exports.reporteExcel = (async (req, res, next) => {
+module.exports.reporteExcel = asyncHandler(async (req, res, next) => {
   const {editionsId} = req.params;
   console.warn(editionsId);
   let questions = await Questions.findAll({
@@ -126,26 +126,35 @@ module.exports.reporteExcel = (async (req, res, next) => {
       });
       return el;
     });
-
-    console.log(reslts);
-    const reportParams = `Questions=${JSON.stringify(JSON.stringify(reslts))} Studycases=${JSON.stringify(JSON.stringify(resltscase))}`;
+    const picsUrl = process.env.ROOT_URL;
+    // const reportParams = `Questions=${JSON.stringify(JSON.stringify(reslts))} Studycases=${JSON.stringify(JSON.stringify(resltscase))} url=${picsUrl}`;
+    const reportParams = `url=${picsUrl}`;
+    fs.writeFileSync(path.join(__dirname, "../questions.txt"), JSON.stringify((reslts)));
+    fs.writeFileSync(path.join(__dirname, "../studycases.txt"), JSON.stringify((resltscase)));
     const pathJar = path.join(__dirname, "../reporter/com.ocpms.reporting-1.0-SNAPSHOT.jar");
     let child = exec(`java -jar ${pathJar} ${reportParams}`,
       function (error, stdout, stderr) {
         // console.log('stdout: ' + stdout);
         // console.log('stderr: ' + stderr);
+        console.error(`java -jar ${pathJar} ${reportParams}`);
         if(error !== null) {
-          console.error(`java -jar ${pathJar} ${reportParams}`);
-          // console.log('exec error: ' + error);
-          res.status(HttpStatus.EXPECTATION_FAILED, "cannot generate an Excel file make sure the data is complete");
+          // console.log('exec error: ' + stderr);
+          let err = "";
+          if(stderr && stderr.toString().indexOf("URL") !== 0) err = stderr || "";
+          return next(
+            new ErrorResponse("cannot generate an Excel file make sure the data is complete: more infos :  " + err, HttpStatus.EXPECTATION_FAILED)
+          );
         } else {
           console.error("found content");
+          res.setHeader('Content-Disposition', 'attachment; filename=' + `${editionsId}-${new Date().valueOf()}.xlsx`);
+          res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetxml.sheet');
           res.status(HttpStatus.OK).sendFile(path.join(__dirname,'../excel.xlsx'));
           // res.status(HttpStatus.OK).json({cases, questions});
         }
       });
-
   } else {
-    res.status(HttpStatus.NOT_FOUND).json("cette édition / classification n'a pas encore de question ou de cas d'étude (this is not an error)");
+    return next(
+      new ErrorResponse("cette édition / classification n'a pas encore de question ou de cas d'étude (this is not an error)", HttpStatus.NOT_FOUND)
+    );
   }
 });

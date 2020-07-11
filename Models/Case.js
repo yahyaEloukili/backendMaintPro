@@ -17,8 +17,8 @@ const Theme = conn.define("case", {
         msg: 'Nom est obligatoire'
       },
       len: {
-        args: [5, 49],
-        msg: "La longueur de la chaîne doit etre entre 5 et 49"
+        args: [2, 49],
+        msg: "La longueur de la chaîne doit etre entre 2 et 49"
       }
     }
   }

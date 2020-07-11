@@ -18,8 +18,8 @@ const StudyCase = conn.define("studyCase", {
         msg: 'titres est obligatoire'
       },
       len: {
-        args: [5, 150],
-        msg: "La longueur de la chaîne doit etre minimum de 5 caractères"
+        args: [2, 150],
+        msg: "La longueur de la chaîne doit etre minimum de 2 caractères"
       }
     }
   },
