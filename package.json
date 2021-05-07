@@ -34,7 +34,7 @@
     "nodemailer": "^6.4.6",
     "sequelize": "^4.0.0",
     "sequelize-transforms": "^2.0.0",
-    "underscore": "^1.9.2"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
